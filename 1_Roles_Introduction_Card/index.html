@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introduction Card</title>
+    <
+    <style>
+        body {
+            /*100% window height*/
+            min-height: 100vh;
+            display:flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #eff5ff;
+        }
+        .container h1{
+            display: flex;
+            justify-content: center;
+            height: 100px;
+            font: 15mm sans-serif;
+        }
+        .container ul{
+            list-style: none;
+            text-align: center;
+        }
+        .container li{
+            width: 320px;
+            height: 320px;
+            display: inline-block;
+            margin: 5px;
+            text-align: left;
+            position:relative;
+        }
+        .container li img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            position: relative;
+            z-index: 10;
+            transition: transform 0.35s;
+        }
+        .container li .text{
+            width: 100%;
+            height: 100%;
+            background-color: #2c3f52;
+            color: #b7ccde;
+            position: absolute;
+            left: 0;
+            top: 0;
+            padding: 20px;
+            /* default*0.7times、opacity=0 */
+            transform: scale(0.7);
+            opacity: 0;
+            transition: 0.35s;
+        }
+        .container li h3{
+            color: #fff;
+        }
+        .container li a{
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            background-color: #2b80ae;
+            color: #fff;
+            text-decoration: none;
+            padding: 5px 10px;
+            border-radius: 2px;
+        }
+        /* images status when hover */
+        .container li:hover img{
+            transform: scale(0.45);
+            border-radius: 50%;
+            border: 15px solid rgba(255,255,255,0.25);
+        }
+        /* text status when hover */
+        .container li:hover .text{
+            transform: scale(1);
+            opacity: 1;
+        }
+        #colorButton {
+            position: absolute;
+            top: 200px;
+            right: 180px;
+            height: 15mm;
+            font-size: 20px;
+            
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Role Introduction Card</h1>
+        <ul>
+            <li>
+                <img src="/images/BLAZAR.jpg" alt="">
+                <div class="text">
+                    <h3>BLAZAR</h3>
+                    <span>No.1</span>
+                    <a href="#">Know More NO.1</a>
+                </div>
+            </li>
+            <li>
+                <img src="/images/heroes24_titas.jpg" alt="">
+                <div class="text">
+                    <h3>Titas</h3>
+                    <span>No.2</span>
+                    <a href="#">Know More No.2</a>
+                </div>
+            </li>
+            <li>
+                <img src="/images/heroes26_ribut.jpg" alt="">
+                <div class="text">
+                    <h3>Ribut</h3>
+                    <span>No.3</span>
+                    <a href="#">Know More No.3</a>
+                </div>
+            </li>
+            <li>
+                <img src="/images/heroes27_zett.jpg" alt="">
+                <div class="text">
+                    <h3>Zett</h3>
+                    <span>No.4</span>
+                    <a href="#">Know More No.4</a>
+                </div>
+            </li>
+            <li>
+                <img src="/images/Ultraman-Fuma-Top.png" alt="">
+                <div class="text">
+                    <h3>Fuma</h3>
+                    <span>No.5</span>
+                    <a href="#">Know More No.5</a>
+                </div>
+            </li>
+            <li>
+                <img src="/images/Ultraman-Regulos-Top.png" alt="">
+                <div class="text">
+                    <h3>Regulos</h3>
+                    <span>No.6</span>
+                    <a href="#">Know More No.6</a>
+                </div>
+            </li>
+            <li>
+                <img src="/images/Ultraman-Trigger-Top.png" alt="">
+                <div class="text">
+                    <h3>Trigger</h3>
+                    <span>No.7</span>
+                    <a href="#">Know More No.7</a>
+                </div>
+            </li>
+            <li>
+                <img src="/images/Ultrawoman-Decker-Top.png" alt="">
+                <div class="text">
+                    <h3>Decker</h3>
+                    <span>No.8</span>
+                    <a href="#">Know More No.8</a>
+                </div>
+            </li>
+            <li>
+                <img src="/images/heroes22_blu.jpg" alt="">
+                <div class="text">
+                    <h3>Blu</h3>
+                    <span>No.9</span>
+                    <a href="#">Know More No.9</a>
+                </div>
+            </li>
+            <li>
+                <img src="/images/Ultraman-Hikari-Top.png" alt="">
+                <div class="text">
+                    <h3>Hikari</h3>
+                    <span>No.10</span>
+                    <a href="#">Know More No.10</a>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <button id="colorButton">Change Color</button>
+    <script>
+        const button = document.getElementById('colorButton');
+        button.addEventListener('click', () => {
+            const randomColor = Math.floor(Math.random()*16777215).toString(16);
+            document.body.style.backgroundColor = "#" + randomColor;
+        });
+    </script>
+</body>
+</html>
